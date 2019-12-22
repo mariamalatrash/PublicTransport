@@ -115,6 +115,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Area.cpp" />
+    <ClCompile Include="City.cpp" />
+    <ClCompile Include="Line.cpp" />
+    <ClCompile Include="Location.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Road.cpp" />
+    <ClCompile Include="Share.cpp" />
+    <ClCompile Include="Station.cpp" />
+    <ClCompile Include="SubCluster.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Area.h" />
+    <ClInclude Include="City.h" />
+    <ClInclude Include="Line.h" />
+    <ClInclude Include="Location.h" />
+    <ClInclude Include="Road.h" />
+    <ClInclude Include="Share.h" />
+    <ClInclude Include="Station.h" />
+    <ClInclude Include="SubCluster.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="suprBus.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
