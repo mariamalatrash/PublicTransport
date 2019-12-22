@@ -9,7 +9,9 @@ using namespace std;
 
 class CSVreader {
 private:
-	string text;
+	vector<vector<string>> text;
+	string& readFromCSV();
+	vector<vector<string>>& splitText(string& text);
 public:
 	CSVreader();
 	~CSVreader();
