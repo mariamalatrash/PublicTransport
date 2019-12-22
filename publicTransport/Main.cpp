@@ -9,6 +9,7 @@
 #include "Line.h"
 #include "Location.h"
 #include "Road.h"
+#include "CSVreader.h"
 using namespace std;
 
 vector<Station> stations;
@@ -16,18 +17,11 @@ vector<Line> lines;
 vector<Area> areas;
 
 void initializeGlobalVariables() {
-	string fileName = "suprBus.csv";
-	ifstream myFile;
-	string file;
-	int count = 0;
-	myFile.open(fileName);
-	while (myFile.good()&&count <5) {
-		count++;
-		string line;
-		getline(myFile, line, '\n');
-		file += line+"\n\n";
-	}
-	cout << file << endl;
+	CSVreader csvReader;
+	csvReader = CSVreader();
+	csvReader.setStations(stations);
+	csvReader.setLines(lines);
+	csvReader.setAreas(areas);
 }
 
 void printChoices() {
@@ -40,15 +34,27 @@ void printChoices() {
 }
 
 void showAllBusLines() {
-
+	string result = "";
+	for (int i = 0; i < lines.size(); i++) {
+		result += (lines[i].toString()+"\n");
+	}
+	cout << result << endl;
 }
 
 void showLinesByArea() {
-
+	string result = "";
+	for (int i = 0; i < areas.size(); i++) {
+		result += (areas[i].toString() + "\n");
+	}
+	cout << result << endl;
 }
 
 void showMultiLineStations() {
-
+	string result = "Stations with multiple lines: ";
+	for (int i = 0; i < stations.size(); i++)
+		if (stations[i].getLines().size() > 1)
+			result += stations[i].getStationSerialNumber()+", ";
+	cout << result << endl;
 }
 
 int decideFunctionAccordingToUserChoice() {
