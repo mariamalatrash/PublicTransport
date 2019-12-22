@@ -122,5 +122,6 @@ string Station::toString(){
     string straction =to_string(action);
     string strfloor =to_string(floor);
     string strplatform =to_string(platform);
-  return"stationSerialNumber:"+strstationSerialNumber+" stationName:"+stationName+" action:"+straction+" floor:"+strfloor+" platform:"+strplatform+" location:"+location.ToStringLocation()+" share:"+share.ToStringShare();
+    string strStatus=status ? "Active":"not Active";
+  return"Station serial number: "+strstationSerialNumber+", Station name: "+stationName+", Action: "+straction+", Floor:"+strfloor+", Platform:"+strplatform+", Location: "+location.ToStringLocation()+",Status: "+strStatus+", Share:"+share.ToStringShare();
 }
