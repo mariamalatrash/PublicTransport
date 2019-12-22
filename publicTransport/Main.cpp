@@ -30,6 +30,47 @@ void initializeGlobalVariables() {
 	cout << file << endl;
 }
 
+void printChoices() {
+	cout << "Welcome to our public transport partial app:" << endl;
+	cout << "(Please choose one of the following)" << endl;
+	cout << "1. Show all bus lines." << endl;
+	cout << "2. Show lines by area." << endl;
+	cout << "7. Stations that have more than one line." << endl;
+	cout << "8. exit." << endl;
+}
+
+void showAllBusLines() {
+
+}
+
+void showLinesByArea() {
+
+}
+
+void showMultiLineStations() {
+
+}
+
+int decideFunctionAccordingToUserChoice() {
+	int choice;
+	cin >> choice;
+	switch (choice) {
+	case 1:
+		showAllBusLines();
+		break;
+	case 2:
+		showLinesByArea();
+		break;
+	case 7:
+		showMultiLineStations();
+		break;
+	case 8:
+		return 0;
+	}
+	return choice;
+}
+
+
 int main() {
 	/*
 	//testing Area class
@@ -55,7 +96,9 @@ int main() {
 
 	initializeGlobalVariables();
 
+	do {
+		printChoices();
+	} while (decideFunctionAccordingToUserChoice() != 0);
 
-	getchar();
 	return 0;
 }
