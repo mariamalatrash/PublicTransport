@@ -50,6 +50,7 @@ class Station{
 		Location getLocation();
 		bool getStatus();
 		Share getShare();
+		vector<vector<int>> getLines();
 		string toString();
     
 };

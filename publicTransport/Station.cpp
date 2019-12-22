@@ -116,6 +116,10 @@ Share Station::getShare(){
     return share;
 }
 
+vector<vector<int>> Station::getLines() {
+	return lines;
+}
+
 //TODO: reformat the returned str
 string Station::toString(){
     string strstationSerialNumber=to_string(stationSerialNumber);
@@ -123,6 +127,6 @@ string Station::toString(){
     string strfloor =to_string(floor);
     string strplatform =to_string(platform);
     string strStatus=status ? "Active":"not Active";
-  return"Station serial number: "+strstationSerialNumber+", Station name: "+stationName+", Action: "+straction+", Floor:"+strfloor+", Platform:"+strplatform+", Location: "+location.ToStringLocation()+",Status: "+strStatus+", Share:"+share.ToStringShare();
+  return"Station serial number: "+strstationSerialNumber+", Station name: "+stationName+", Action: "+straction+", Floor:"+strfloor+", Platform:"+strplatform+", Location: "+location.toString()+",Status: "+strStatus+", Share:"+share.toString();
 
 }
