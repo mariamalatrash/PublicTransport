@@ -1,2 +1,7 @@
-﻿  Main.cpp
+﻿  CSVreader.cpp
+  Main.cpp
+c:\users\abeer\desktop\publictransport\publictransport\publictransport\main.cpp(38): warning C4018: '<': signed/unsigned mismatch
+c:\users\abeer\desktop\publictransport\publictransport\publictransport\main.cpp(46): warning C4018: '<': signed/unsigned mismatch
+c:\users\abeer\desktop\publictransport\publictransport\publictransport\main.cpp(54): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
   publicTransport.vcxproj -> C:\Users\abeer\Desktop\publicTransport\PublicTransport\publicTransport\Debug\publicTransport.exe
