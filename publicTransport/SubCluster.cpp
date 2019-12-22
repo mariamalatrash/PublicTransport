@@ -64,5 +64,5 @@ string Sub_Cluster::getdistrict(){
 //TODO: reformat the returned str
 string Sub_Cluster::toString(){
     string strclusterCode= to_string(clusterCode);
-    return strclusterCode+" "+clusterName+" "+SubClusterName+" "+district;
+    return "Cluster code: "+strclusterCode+",Cluster name: "+clusterName+",Sub cluster name: "+SubClusterName+",district: "+district;
 }

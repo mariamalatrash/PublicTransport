@@ -61,7 +61,10 @@ vector<int> Area::getlines(){
 
 //TODO: add lines
 string Area::toString(){
+    string strLines=",Lines: ";
+    for(int i=0;i<lines.size();i++)
+        strLines+=(to_string(lines[i])+",");
     string strAreaCode = "Area code:" + to_string(AreaCode);
-    return strAreaCode + ", Area Name:" + AreaName;
+    return strAreaCode + ", Area Name:" + AreaName+strLines;
 }
 
