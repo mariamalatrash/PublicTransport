@@ -21,11 +21,11 @@ public:
     Location();
     Location(int longitude,int latitude);
     ~Location();
-    void setlongitude(int longitude);
-    void setlatitude(int latitude);
-    int getlongitude();
-    int getlatitude();
-    string ToStringLocation();
+    void setLongitude(int longitude);
+    void setLatitude(int latitude);
+    int getLongitude();
+    int getLatitude();
+    string toString();
 };
 
 #endif /* location_h */

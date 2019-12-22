@@ -11,6 +11,8 @@
 #pragma once
 #include<iostream>
 using namespace std;
+
+
 class City{
 private:
     int cityCode;
@@ -23,7 +25,7 @@ public:
     void setcityName(string cityName);
     int getcityCode();
     string getcityName();
-    string ToStringCity();
+    string toString();
 };
 
 #endif /* City_h */

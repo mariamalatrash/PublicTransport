@@ -8,65 +8,87 @@
 #include <iostream>
 #include <string>
 using namespace std;
-#include "line.h"
+#include "Line.h"
 
 
 Line::Line(){
-    
+	this->companyName = "Empty";
+	this->makatCode = -1;
+	this->lineCode = -1;
+	this->dirction = "Haloch";
+	this->alternative = -1;
 }
-Line::Line(string companyName,int makatCode,int lineCode,int dirction,int alternation,vector <int >path){
+
+Line::Line(string companyName,int makatCode,int lineCode, string dirction,int alternative,vector <int >path){
     this->companyName=companyName;
     this->makatCode=makatCode;
     this->lineCode=lineCode;
     this->dirction=dirction;
-    this->alternation=alternation;
+    this->alternative = alternative;
     this->path=path;
 }
+
 Line::~Line(){
     
 }
-void Line::setcompanyName(string companyName){
+
+void Line::setCompanyName(string companyName){
     this->companyName=companyName;
 }
-void Line::setmakatCode(int makatCode){
+
+void Line::setMakatCode(int makatCode){
     this->makatCode=makatCode;
 }
-void Line::setlineCode(int lineCode){
+
+void Line::setLineCode(int lineCode){
     this->lineCode=lineCode;
 }
-void Line::setdirction(int dirction){
+
+void Line::setDirction(int dirction){
     this->dirction=dirction;
 }
-void Line::setalternation(int alternation){
-    this->alternation=alternation;
+
+void Line::setAlternative(int alternation){
+    this->alternative=alternation;
 }
-void Line::setpath(vector <int >path){
+
+void Line::setPath(vector <int >path){
     this->path=path;
 }
-string Line::getcompanyName(){
+
+void Line::addStationToPath(int stationCode) {
+	this->path.push_back(stationCode);
+}
+
+string Line::getCompanyName(){
     return companyName;
 }
-int Line::getmakatCode(){
+
+int Line::getMakatCode(){
     return makatCode;
 }
-int Line::getlineCode(){
+
+int Line::getLineCode(){
     return lineCode;
 }
-int Line::getdirction(){
+
+string Line::getDirction(){
     return dirction;
 }
-int Line::getalternation(){
-    return alternation;
+
+int Line::getAlternative(){
+    return alternative;
 }
-vector <int > Line::getpath(){
+
+vector <int > Line::getPath(){
     return path;
 }
-//string Line::ToStringLine(){
-//    string strmakatCode=to_string(makatCode);
-//    string strlineCode=to_string(lineCode);
-//    string strdirction=to_string(dirction);
-//    string stralternation=to_string(alternation);
-//    return companyName+""+strmakatCode+""+strlineCode+""+strdirction+""+stralternation;
-//}
+
+string Line::toString(){
+    string strmakatCode=", makat: "+to_string(makatCode);
+    string strlineCode=", line code: "+to_string(lineCode);
+    string stralternative=",Alternative line: "+to_string(alternative);
+    return "Company: "+companyName+strmakatCode+strlineCode+", direction: "+dirction+ stralternative;
+}
 
 

@@ -11,17 +11,23 @@ using namespace std;
 
 
 Road::Road(){
-    
+	this->roadName = "Empty";
 }
+
 Road::Road(string roadName){
     this->roadName=roadName;
 }
+
 Road::~Road(){
     
 }
-void Road::setroadName(string roadName){
+
+void Road::setRoadName(string roadName){
       this->roadName=roadName;
 }
-string Road::getroadName(){
+string Road::getRoadName(){
     return roadName;
+}
+string Road::toString() {
+	return "Road: " + roadName;
 }

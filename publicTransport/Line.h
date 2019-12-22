@@ -18,25 +18,26 @@ private:
     string companyName;
     int makatCode;
     int lineCode;
-    int dirction;
-    int alternation;
-    vector <int >path;
+    string dirction;//haloch chazor circular
+    int alternative;
+    vector <int> path;
 public:
     Line();
-    Line(string companyName,int makatCode,int lineCode,int dirction,int alternation,vector <int >path);
+    Line(string companyName,int makatCode,int lineCode, string dirction,int alternation,vector <int >path);
     ~Line();
-    void setcompanyName(string companyName);
-    void setmakatCode(int makatCode);
-    void setlineCode(int lineCode);
-    void setdirction(int dirction);
-    void setalternation(int alternation);
-    void setpath(vector <int >path);
-    string getcompanyName();
-    int getmakatCode();
-    int getlineCode();
-    int getdirction();
-    int getalternation();
-    vector <int > getpath();
-    string ToStringLine();
+    void setCompanyName(string companyName);
+    void setMakatCode(int makatCode);
+    void setLineCode(int lineCode);
+    void setDirction(int dirction);
+    void setAlternative(int alternation);
+    void setPath(vector <int >path);
+	void addStationToPath(int stationCode);
+    string getCompanyName();
+    int getMakatCode();
+    int getLineCode();
+	string getDirction();
+    int getAlternative();
+    vector <int > getPath();
+    string toString();
 };
 #endif /* line_h */

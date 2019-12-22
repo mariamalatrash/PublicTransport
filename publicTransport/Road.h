@@ -19,8 +19,9 @@ public:
     Road();
     Road(string roadName);
     ~Road();
-    void setroadName(string roadName);
-    string getroadName();
+    void setRoadName(string roadName);
+    string getRoadName();
+	string toString();
     
 };
 #endif /* Road_h */

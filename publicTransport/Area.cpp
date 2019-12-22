@@ -13,7 +13,12 @@ using namespace std;
 
 Area::Area(){
 	this->AreaCode = -1;
-	this->AreaName = "";
+	this->AreaName = "Empty";
+}
+
+Area::Area(int AreaCode, string AreaName) {
+	this->AreaCode = AreaCode;
+	this->AreaName = AreaName;
 }
 
 Area::Area(int AreaCode,string AreaName,vector <int>lines){

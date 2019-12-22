@@ -20,10 +20,10 @@ public:
     Share();
     Share(int shareCode,string shareDescription);
     ~Share();
-    void setshareCode(int shareCode);
-    void setshareDescription(string shareDescription);
+    void setShareCode(int shareCode);
+    void setShareDescription(string shareDescription);
     int getshareCode();
     string getshareDescription();
-    string ToStringShare();
+    string toString();
 };
 #endif /* share_h */

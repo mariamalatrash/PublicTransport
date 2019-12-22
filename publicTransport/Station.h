@@ -10,40 +10,47 @@
 #define station_h
 #pragma once
 #include<iostream>
-using namespace std;
+#include <vector>
 #include "location.h"
 #include "share.h"
+
+using namespace std;
+
+
 class Station{
-private:
-    int stationSerialNumber;
-    string stationName;
-    int action;
-    int floor;
-    int platform;
-    Location location;
-    bool status;
-    Share share;
-public:
-    Station();
-    Station(int stationSerialNumber,string stationName,int action,int floor,int platform,Location location,bool status,Share share);
-    ~Station();
-    void setstationSerialNumber(int stationSerialNumber);
-    void setstationName(string stationName);
-    void setaction(int action);
-    void setfloor(int floor);
-    void setplatform(int platform);
-    void setlocation(Location location);
-    void setstatus(bool status);
-    void setshare(Share share);
-    int getstationSerialNumber();
-    string getstationName();
-    int getaction();
-    int getfloor();
-    int getplatform();
-    Location getlocation();
-    bool getstatus();
-    Share getshare();
-    string ToStringStation();
+	private:
+		int stationSerialNumber;
+		string stationName;
+		int action;
+		int floor;
+		int platform;
+		Location location;
+		bool status;
+		Share share;
+		vector<vector<int>> lines;
+	public:
+		Station();
+		Station(int stationSerialNumber,string stationName,int action,int floor,int platform,Location location,bool status,Share share, vector<vector<int>> lines);
+		~Station();
+		void setStationSerialNumber(int stationSerialNumber);
+		void setStationName(string stationName);
+		void setAction(int action);
+		void setFloor(int floor);
+		void setPlatform(int platform);
+		void setLocation(Location location);
+		void setStatus(bool status);
+		void setShare(Share share);
+		void setLines(vector<vector<int>> lines);
+		void addLine(int lineCode,int order);
+		int getStationSerialNumber();
+		string getStationName();
+		int getAction();
+		int getFloor();
+		int getPlatform();
+		Location getLocation();
+		bool getStatus();
+		Share getShare();
+		string toString();
     
 };
 

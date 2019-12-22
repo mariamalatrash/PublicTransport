@@ -30,7 +30,7 @@ public:
     string getclusterName();
     string getSubClusterName();
     string getdistrict();
-    string ToStringSubCluster();
+    string toString();
  
     
 };

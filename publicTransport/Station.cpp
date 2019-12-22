@@ -6,15 +6,24 @@
 //  Copyright © 2019 user. All rights reserved.
 //
 #include <iostream>
+#include <string>
 using namespace std;
 #include "station.h"
 #include "location.h"
 #include "share.h"
 
 Station::Station(){
-    
+	this->stationSerialNumber = -1;
+	this->stationName = "Empty";
+	this->action = -1;
+	this->floor = -1;
+	this->platform = -1;
+	this->location = Location();
+	this->status = false;
+	this->share = Share();
 }
-Station::Station(int stationSerialNumber,string stationName,int action,int floor,int platform,Location location,bool status,Share share){
+
+Station::Station(int stationSerialNumber,string stationName,int action,int floor,int platform,Location location,bool status,Share share, vector<vector<int>> lines){
     this->stationSerialNumber=stationSerialNumber;
     this->stationName=stationName;
     this->action=action;
@@ -23,64 +32,95 @@ Station::Station(int stationSerialNumber,string stationName,int action,int floor
     this->location=location;
     this->status=status;
     this->share=share;
-    
+	this->lines = lines;
 }
+
 Station::~Station(){
     
 }
-void Station::setstationSerialNumber(int stationSerialNumber){
+
+void Station::setStationSerialNumber(int stationSerialNumber){
     this->stationSerialNumber=stationSerialNumber;
 }
-void Station::setstationName(string stationName){
+
+void Station::setStationName(string stationName){
     this->stationName=stationName;
 
 }
-void Station::setaction(int action){
+
+void Station::setAction(int action){
     this->action=action;
 }
-void Station::setfloor(int floor){
+
+void Station::setFloor(int floor){
     this->floor=floor;
 }
-void Station::setplatform(int platform){
+
+void Station::setPlatform(int platform){
     this->platform=platform;
 }
-void Station::setlocation(Location location){
+
+void Station::setLocation(Location location){
     this->location=location;
 }
-void Station::setstatus(bool status){
+
+void Station::setStatus(bool status){
     this->status=status;
 }
-void Station::setshare(Share share){
+
+void Station::setShare(Share share){
      this->share=share;
 }
-int Station::getstationSerialNumber(){
+
+void Station::setLines(vector<vector<int>> lines) {
+	this->lines = lines;
+}
+
+void Station::addLine(int lineCode, int order) {
+	vector<int> line;
+	line.push_back(lineCode);
+	line.push_back(order);
+	lines.push_back(line);
+}
+
+
+int Station::getStationSerialNumber(){
     return stationSerialNumber;
 }
-string Station::getstationName(){
+
+string Station::getStationName(){
     return stationName;
 }
-int Station::getaction(){
+
+int Station::getAction(){
     return action;
 }
-int Station::getfloor(){
+
+int Station::getFloor(){
     return floor;
 }
-int Station::getplatform(){
+
+int Station::getPlatform(){
     return platform;
 }
-Location Station::getlocation(){
+
+Location Station::getLocation(){
     return location;
 }
-bool Station::getstatus(){
+
+bool Station::getStatus(){
     return status;
 }
-Share Station::getshare(){
+
+Share Station::getShare(){
     return share;
 }
-//string Station::ToStringStation(){
-//    string strstationSerialNumber=to_string(stationSerialNumber);
-//    string straction =to_string(action);
-//    string strfloor =to_string(floor);
-//    string strplatform =to_string(platform);
-//  return"stationSerialNumber:"+strstationSerialNumber+" stationName:"+stationName+" action:"+straction+" floor:"+strfloor+" platform:"+strplatform+" location:"+location.ToStringLocation()+" share:"+share.ToStringShare();
-//}
+
+//TODO: reformat the returned str
+string Station::toString(){
+    string strstationSerialNumber=to_string(stationSerialNumber);
+    string straction =to_string(action);
+    string strfloor =to_string(floor);
+    string strplatform =to_string(platform);
+  return"stationSerialNumber:"+strstationSerialNumber+" stationName:"+stationName+" action:"+straction+" floor:"+strfloor+" platform:"+strplatform+" location:"+location.ToStringLocation()+" share:"+share.ToStringShare();
+}

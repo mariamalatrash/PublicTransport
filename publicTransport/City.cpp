@@ -11,29 +11,37 @@ using namespace std;
 #include "City.h"
 
 City::City(){
-    
+	this->cityCode = -1;
+	this->cityName = "Empty";
 }
+
 City::City(int cityCode,string cityName){
     this->cityCode=cityCode;
     this->cityName=cityName;
 }
+
 City::~City(){
     
 }
+
 void City::setcityCode(int cityCode){
     this->cityCode=cityCode;
 }
+
 void City::setcityName(string cityName){
     this->cityName=cityName;
 }
+
 int City::getcityCode(){
     return cityCode;
 }
+
 string City::getcityName(){
     return cityName;
 }
-string City::ToStringCity(){
-    string strcityCode=to_string(cityCode);
-    return strcityCode+" "+cityName+" ";
+
+string City::toString(){
+    string strcityCode = "City code: " + to_string(cityCode);
+    return strcityCode+", city name: "+cityName;
 }
 

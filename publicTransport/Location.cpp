@@ -6,35 +6,40 @@
 //  Copyright © 2019 user. All rights reserved.
 //
 #include <iostream>
+#include <string>
 using namespace std;
-#include "location.h"
+#include "Location.h"
 
 
 
 Location::Location(){
-    
+	this->longitude = 0;
+	this->latitude = 0;
 }
+
 Location::Location(int longitude,int latitude){
     this->longitude=longitude;
     this->latitude=latitude;
 }
+
 Location::~Location(){
     
 }
-void Location::setlongitude(int longitude){
+
+void Location::setLongitude(int longitude){
     this->longitude=longitude;
 }
-void Location::setlatitude(int latitude){
+void Location::setLatitude(int latitude){
     this->latitude=latitude;
 }
-int Location::getlongitude(){
+int Location::getLongitude(){
     return longitude;
 }
-int Location::getlatitude(){
+int Location::getLatitude(){
     return latitude;
 }
-//string Location::ToStringLocation(){
-//    string strlongitude=to_string(longitude);
-//    string strlatitude= to_string(latitude);
-//    return "longitude:"+strlongitude+" latitude:"+strlatitude+"\n";
-//}
+string Location::toString(){
+    string strlongitude=to_string(longitude);
+    string strlatitude= to_string(latitude);
+    return "Longitude: "+strlongitude+", latitude: "+strlatitude+"\n";
+}
