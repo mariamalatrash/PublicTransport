@@ -122,5 +122,5 @@ string Station::toString(){
     string straction =to_string(action);
     string strfloor =to_string(floor);
     string strplatform =to_string(platform);
-  return"stationSerialNumber:"+strstationSerialNumber+" stationName:"+stationName+" action:"+straction+" floor:"+strfloor+" platform:"+strplatform+" location:"+location.ToStringLocation()+" share:"+share.ToStringShare();
+  return"stationSerialNumber:"+strstationSerialNumber+" stationName:"+stationName+" action:"+straction+" floor:"+strfloor+" platform:"+strplatform+" location:"+location.toString()+" share:"+share.toString();
 }

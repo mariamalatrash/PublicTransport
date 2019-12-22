@@ -1,11 +1,34 @@
 #include <iostream>
+#include <fstream>
+#include<string>
+#include "SubCluster.h"
 #include "Area.h"
 #include "City.h"
+#include "Station.h"
+#include "Share.h"
 #include "Line.h"
 #include "Location.h"
 #include "Road.h"
-
 using namespace std;
+
+vector<Station> stations;
+vector<Line> lines;
+vector<Area> areas;
+
+void initializeGlobalVariables() {
+	string fileName = "suprBus.csv";
+	ifstream myFile;
+	string file;
+	int count = 0;
+	myFile.open(fileName);
+	while (myFile.good()&&count <5) {
+		count++;
+		string line;
+		getline(myFile, line, '\n');
+		file += line+"\n\n";
+	}
+	cout << file << endl;
+}
 
 int main() {
 	/*
@@ -30,6 +53,7 @@ int main() {
 	r = Road();
 	cout << r.toString().c_str() << endl;*/
 
+	initializeGlobalVariables();
 
 
 	getchar();
